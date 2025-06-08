@@ -17,6 +17,19 @@ document.getElementById('entry-form').addEventListener('submit', function(e) {
     renderEntries();
 });
 
+function sendToGoogleSheets(entry) {
+  fetch("https://script.google.com/macros/s/AKfycbzvis-nCvrt84LFchRIGQosaUEEdPWGjyUoIQlL9uWyHfDJ9SwKxFVN7dpRC8-l4u3K/exec", {
+    method: "POST",
+    body: JSON.stringify(entry),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(res => res.text())
+  .then(data => console.log("Saved:", data))
+  .catch(err => console.error("Error:", err));
+}
+
 function renderEntries() {
     const entriesDiv = document.getElementById('entries');
     const entries = JSON.parse(localStorage.getItem('money_entries')) || [];
