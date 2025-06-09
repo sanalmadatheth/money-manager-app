@@ -18,7 +18,7 @@ document.getElementById('entry-form').addEventListener('submit', function(e) {
 });
 
 function sendToGoogleSheets(entry) {
-  fetch("https://script.google.com/macros/s/AKfycbzvis-nCvrt84LFchRIGQosaUEEdPWGjyUoIQlL9uWyHfDJ9SwKxFVN7dpRC8-l4u3K/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbx3gX9fZaAPWRM8sGJ20cbaCKwDNUBtIXuTx3N7EKf8ASEnc1wdYAr3TfPfPJPxmOVn/exec", {
     method: "POST",
     body: JSON.stringify(entry),
     headers: {
