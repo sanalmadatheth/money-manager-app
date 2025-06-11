@@ -7,7 +7,7 @@ document.getElementById('entry-form').addEventListener('submit', function(e) {
     const amount = document.getElementById('amount').value;
     const mode = document.getElementById('payment-mode').value;
     const date = document.getElementById('date').value;
-
+    const scriptURL = "https://script.google.com/macros/s/AKfycbx3gX9fZaAPWRM8sGJ20cbaCKwDNUBtIXuTx3N7EKf8ASEnc1wdYAr3TfPfPJPxmOVn/exec";
     const entry = { type, category, subcategory, amount, mode, date };
     let entries = JSON.parse(localStorage.getItem('money_entries')) || [];
     entries.push(entry);
